@@ -1,0 +1,66 @@
+# Multi-Agent System Role Configuration
+# This file defines agent roles for both demo and production modes
+
+demo_mode:
+  president:
+    session: "president"
+    pane: "0"
+    role: "プロジェクト統括責任者"
+    description: "デモプロジェクトの開始と管理"
+  boss1:
+    session: "multiagent"
+    pane: "0.0"
+    role: "チームリーダー"
+    description: "ワーカーへのタスク配分と進捗管理"
+  worker1:
+    session: "multiagent"
+    pane: "0.1"
+    role: "実行担当者A"
+    description: "Hello World タスクの実行"
+  worker2:
+    session: "multiagent"
+    pane: "0.2"
+    role: "実行担当者B"
+    description: "Hello World タスクの実行"
+  worker3:
+    session: "multiagent"
+    pane: "0.3"
+    role: "実行担当者C"
+    description: "Hello World タスクの実行"
+
+production_mode:
+  president:
+    session: "president"
+    pane: "0"
+    role: "プロジェクト統括責任者"
+    description: "戦略的意思決定と全体管理"
+  pmo:
+    session: "multiagent"
+    pane: "0.0"
+    role: "プロジェクト管理オフィス"
+    description: "プロジェクト進行管理と品質保証"
+  worker1-requirements:
+    session: "multiagent"
+    pane: "0.1"
+    role: "要件定義担当"
+    description: "ビジネス要求の分析と文書化"
+  worker2-specification:
+    session: "multiagent"
+    pane: "0.2"
+    role: "仕様書作成担当"
+    description: "技術仕様とシステム設計"
+  worker3-research:
+    session: "multiagent"
+    pane: "0.3"
+    role: "市場調査・レビュー担当"
+    description: "市場分析と成果物品質評価"
+
+# Session configuration
+sessions:
+  president:
+    window_name: "President"
+    initial_command: "claude --dangerously-skip-permissions"
+  multiagent:
+    window_name: "Multiagent"
+    panes: 4
+    initial_command: "claude --dangerously-skip-permissions"
